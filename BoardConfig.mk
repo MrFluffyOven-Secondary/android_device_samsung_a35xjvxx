@@ -148,3 +148,7 @@ TWRP_EVENT_LOGGING := true
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Modules
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
+
