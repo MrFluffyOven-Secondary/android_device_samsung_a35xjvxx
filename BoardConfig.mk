@@ -62,12 +62,12 @@ BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 BOARD_MKBOOTIMG_ARGS:= \
 --board=SRPWK07A002 \
---dtb_offset=0x00000000 \
+--dtb_offset=0x00007000 \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x00000000 \
 --tags_offset=0x00000000 \
 --header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
---dtb=$(TARGET_PREBUILT_DTB)
+--dtb=$(DEVICE_PATH)/prebuilt/dtb.img
 
 # Blocks
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
