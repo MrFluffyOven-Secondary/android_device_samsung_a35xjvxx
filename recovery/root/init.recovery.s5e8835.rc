@@ -1,7 +1,7 @@
 on init
-    write /proc/sys/kernel/hung_task_timeout_secs 0
-
+    start health-hal-2-1
     start watchdogd
+    write /proc/sys/kernel/hung_task_timeout_secs 0
 
 on late-init
     setprop service.adb.root 1
