@@ -59,6 +59,7 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img 
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 BOARD_MKBOOTIMG_ARGS:= \
 --board=SRPWK07A002 \
@@ -66,8 +67,7 @@ BOARD_MKBOOTIMG_ARGS:= \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x00000000 \
 --tags_offset=0x00000000 \
---header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
---dtb=$(DEVICE_PATH)/prebuilt/dtb.img
+--header_version=$(BOARD_BOOTIMG_HEADER_VERSION)
 
 # Blocks
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
