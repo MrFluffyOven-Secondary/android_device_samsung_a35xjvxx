@@ -12,9 +12,9 @@
 /system_dlkm        ext4      system_dlkm                           flags=display=system_dlkm;logical
 
 # Data Partitions
-/metadata           ext4      /dev/block/by-name/metadata           flags=display=metadata
-/data               f2fs      /dev/block/by-name/userdata           flags=display=data
-/cache              ext4      /dev/block/by-name/cache              flags=display=cache
+/dev/block/by-name/userdata	/data	f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,whint_mode=fs-based,inlinecrypt	latemount,wait,check,quota,reservedsize=128M,checkpoint=fs,,fscompress,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
+/dev/block/by-name/cache	/cache	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,formattable,check
+/dev/block/by-name/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic,sync	wait,formattable,first_stage_mount,check
 
 # Boot
-/misc               emmc      /dev/block/by-name/misc               flags=display=misc
+/misc               emmc      /dev/block/by-name/misc               flags=display=misc,first_stage_mount
