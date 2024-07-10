@@ -66,7 +66,8 @@ BOARD_MKBOOTIMG_ARGS:= \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x00000000 \
 --tags_offset=0x00000000 \
---header_version=$(BOARD_BOOTIMG_HEADER_VERSION)
+--header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
+--dtb=$(TARGET_PREBUILT_DTB)
 
 # Blocks
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
