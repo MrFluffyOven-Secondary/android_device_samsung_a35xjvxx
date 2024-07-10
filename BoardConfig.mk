@@ -63,7 +63,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 BOARD_MKBOOTIMG_ARGS:= \
 --board=SRPWK07A002 \
---dtb_offset=0x00007000 \
+--dtb_offset=0x00000000 \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x00000000 \
 --tags_offset=0x00000000 \
